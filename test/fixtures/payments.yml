@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  calendar_id: 1
+  client_id: 1
+  fecha_corte: 2017-03-14 17:36:49
+  fecha_limite: 2017-03-14 17:36:49
+  fecha_corte: 2017-03-14 17:36:49
+  saldo: 1.5
+  folio: 
+  status_id: 1
+
+two:
+  calendar_id: 1
+  client_id: 1
+  fecha_corte: 2017-03-14 17:36:49
+  fecha_limite: 2017-03-14 17:36:49
+  fecha_corte: 2017-03-14 17:36:49
+  saldo: 1.5
+  folio: 
+  status_id: 1

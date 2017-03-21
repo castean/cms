@@ -1,0 +1,44 @@
+
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <%= link_to "CMS", root_path, id: "logo" %>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item ">
+        <%= link_to "Inicio   |", root_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Clientes   |", clients_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Sectoriales   |", sectorials_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Direcciones IP   |", ip_addresses_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Servicios   |", products_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Calendarios   |", calendars_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Pagos   |",   payments_path %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "   Usuarios   |",   users_path %>
+      </li>
+      <div class="form-inline mt-2 mt-md-0 pull-right">
+        <% if current_user %>
+
+          <li class="pull-right"><%= link_to '   Sign Out', sign_out_path, method: :delete %></li>
+        <% else %>
+          <li class="pull-right"><%= link_to '   Sign In', sign_in_path %></li>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+</nav>

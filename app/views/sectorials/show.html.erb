@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @sectorial.nombre %>
+</p>
+
+<p>
+  <strong>Ip address:</strong>
+  <%= @sectorial.ip_address %>
+</p>
+
+<p>
+  <strong>Limite:</strong>
+  <%= @sectorial.limite %>
+</p>
+
+<%= link_to 'Edit', edit_sectorial_path(@sectorial) %> |
+<%= link_to 'Back', sectorials_path %>

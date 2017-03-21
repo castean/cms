@@ -1,0 +1,30 @@
+<%= form_for(@ip_address) do |f| %>
+  <% if @ip_address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ip_address.errors.count, "error") %> prohibited this ip_address from being saved:</h2>
+
+      <ul>
+      <% @ip_address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class: "form-group">
+    <%= f.label :ip_address %><br>
+    <%= f.text_field :ip_address, class: "form-control",  placeholder: "Direccion de IP"%>
+  </div>
+  <div class="field">
+    <%= f.label :sectorial_id, "Sectorial" %></br>
+    <%= f.collection_select :sectorial_id,  Sectorial.all.order("nombre"), :id, :nombre, options ={:prompt => "-- Selecciona --"}, :id => "sectorial_id", class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :status_id, "Estatus" %></br>
+    <%= f.collection_select :status_id,  IpStatus.all.order("status"), :id, :status, :id => "ip_status_id", class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @client.fullname %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @client.direccion %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @client.tel %>
+</p>
+
+<p>
+  <strong>Cel:</strong>
+  <%= @client.cel %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+
+<p>
+  <strong>Sectorial:</strong>
+  <%= @client.sectorial.nombre %>
+</p>
+
+<p>
+  <strong>Direccion Ip:</strong>
+  <%= @client.ip_address %>
+</p>
+
+<p>
+  <strong>Pay type ip:</strong>
+  <%= @client.payment_type.periodo %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%unless @client.fecha_inicio.nil?%>
+    <%= @client.fecha_inicio.strftime("%d-%m-%Y")%>
+  <%else%>
+    <%= @client.fecha_inicio%>
+  <%end%>
+</p>
+
+<p>
+  <strong>Fecha termino:</strong>
+  <%unless @client.fecha_termino.nil?%>
+    <%= @client.fecha_termino.strftime("%d-%m-%Y")%>
+  <%else%>
+    <%= @client.fecha_termino%>
+  <%end%>
+</p>
+
+<p>
+  <strong>Client status:</strong>
+  <%= @client.status.status %>
+</p>
+
+<%= link_to 'Editar', edit_client_path(@client) %> |
+<%= link_to 'Listado de Clientes', clients_path %>

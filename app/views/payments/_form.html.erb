@@ -1,0 +1,49 @@
+<%= form_for(@payment) do |f| %>
+  <% if @payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+      <% @payment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :calendar_id %><br>
+    <%= f.number_field :calendar_id %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.number_field :client_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_corte %><br>
+    <%= f.datetime_select :fecha_corte %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_limite %><br>
+    <%= f.datetime_select :fecha_limite %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_corte %><br>
+    <%= f.datetime_select :fecha_corte %>
+  </div>
+  <div class="field">
+    <%= f.label :saldo %><br>
+    <%= f.text_field :saldo %>
+  </div>
+  <div class="field">
+    <%= f.label :folio %><br>
+    <%= f.text_field :folio %>
+  </div>
+  <div class="field">
+    <%= f.label :status_id %><br>
+    <%= f.number_field :status_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

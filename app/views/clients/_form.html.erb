@@ -1,0 +1,65 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fullname, "Nombre del Cliente" %><br>
+    <%= f.text_field :fullname %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion, "Dirección" %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :tel, "Teléfono Hogar" %><br>
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :cel, "Celular" %><br>
+    <%= f.text_field :cel %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Correo Electronico" %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_inicio, "Inicio de Contrato" %><br>
+    <%= f.text_field :fecha_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_termino, "Termino del Contrato" %><br>
+    <%= f.text_field :fecha_termino %>
+  </div>
+  <div class="field">
+    <%= f.label :sectorial_id, "Sectorial" %></br>
+    <%= f.collection_select :sectorial_id,  Sectorial.all.order("nombre"), :id, :nombre, :id => "sectorial_id", class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :ip_address, "Dirección de IP" %><br>
+    <%= f.text_field :ip_address %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id, "Plan de Contrato" %></br>
+    <%= f.collection_select :product_id,  Product.all.order("nombre"), :id, :nombre, :id => "product_id", class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_type_id, "Tipo de Pago" %></br>
+    <%= f.collection_select :payment_type_id,  PaymentType.all.order("id"), :id, :periodo, :id => "payment_type_id", class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :status_id, "Estatus" %></br>
+    <%= f.collection_select :status_id,  Status.where(:tabla => "clientes").order("status"), :id, :status, :id => "ip_status_id", class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

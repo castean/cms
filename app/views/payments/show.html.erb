@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Calendar:</strong>
+  <%= @payment.calendar_id %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @payment.client_id %>
+</p>
+
+<p>
+  <strong>Fecha corte:</strong>
+  <%= @payment.fecha_corte %>
+</p>
+
+<p>
+  <strong>Fecha limite:</strong>
+  <%= @payment.fecha_limite %>
+</p>
+
+<p>
+  <strong>Fecha corte:</strong>
+  <%= @payment.fecha_corte %>
+</p>
+
+<p>
+  <strong>Saldo:</strong>
+  <%= @payment.saldo %>
+</p>
+
+<p>
+  <strong>Folio:</strong>
+  <%= @payment.folio %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payment.status_id %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

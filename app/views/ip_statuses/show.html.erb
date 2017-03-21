@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @ip_status.status %>
+</p>
+
+<%= link_to 'Edit', edit_ip_status_path(@ip_status) %> |
+<%= link_to 'Back', ip_statuses_path %>

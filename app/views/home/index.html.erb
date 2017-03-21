@@ -1,0 +1,14 @@
+<div class="center jumbotron">
+  <h1>Tecnológias Informaticas del Norte</h1>
+
+  <h2>
+    CMS para
+    <a href="http://www.tecnologiasinformaticasdelnorte.com/">Tecnológias
+    Informaticas del Norte. </a>
+  </h2>
+  <% if current_user %>
+
+  <%else%>
+    <%= link_to "Sign in!", sign_in_path, class: "btn btn-lg btn-primary" %>
+  <%end%>
+</div>
